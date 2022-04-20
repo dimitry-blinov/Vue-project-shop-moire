@@ -14,7 +14,7 @@
           {{ product.price | numberFormat }} ₽
     </span>
 
-    <BaseColor :colors="product.colors"
+    <BaseColor :colors="colors"
                :current-color.sync="currentColor"
                class="colors--black"/>
 
@@ -30,7 +30,7 @@ import numberFormat from '@/helpers/numberFormat';
 export default {
   name: 'ProductItem',
   components: { BaseColor },
-  props: ['product'],
+  props: ['product', 'colors'],
   data() {
     return {
       currentColor: null,
@@ -42,4 +42,12 @@ export default {
 };
 </script>
 
-<style lang="sass"></style>
+<style lang="scss">
+
+.catalog__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+</style>
