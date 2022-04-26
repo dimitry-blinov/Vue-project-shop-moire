@@ -9,7 +9,7 @@ import CartView from '@/views/CartView';
 // eslint-disable-next-line import/extensions
 import OrderView from '@/views/OrderView';
 // eslint-disable-next-line import/extensions
-import OrderRegistrationView from '@/views/OrderInfoView';
+import OrderInfoView from '@/views/OrderInfoView';
 // eslint-disable-next-line import/extensions
 import notFoundView from '@/views/notFoundView';
 
@@ -33,7 +33,7 @@ const routes = [{
   path: '/order',
 }, {
   name: 'orderInfo',
-  component: OrderRegistrationView,
+  component: OrderInfoView,
   path: '/order/:id',
 }, {
   name: 'notFound',
