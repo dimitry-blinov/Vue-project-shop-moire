@@ -227,12 +227,14 @@ export default {
     async loadProduct() {
       try {
         this.productLoading = true;
+        this.productsLoadingFailed = false;
         const response = await axios(`${API_BASE_URL}/api/products/${this.$route.params.id}`);
         this.productData = response.data;
         if (response.data) {
           this.productLoading = false;
         }
       } catch {
+        this.productsLoadingFailed = true;
         await router.replace({ name: 'notFound' });
       }
     },
