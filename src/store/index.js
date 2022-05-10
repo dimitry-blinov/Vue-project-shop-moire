@@ -6,6 +6,10 @@ import router from '@/router';
 
 Vue.use(Vuex);
 
+// const client = axios.create({
+//   baseURL: API_BASE_URL,
+// });
+
 export default new Vuex.Store({
   state: {
     cartProducts: [],
