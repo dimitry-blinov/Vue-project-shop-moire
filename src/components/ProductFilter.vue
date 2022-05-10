@@ -155,15 +155,19 @@ export default {
       this.$emit('update:season', []);
       this.$emit('update:page', 1);
     },
-    loadCategories() {
-      axios.get(`${API_BASE_URL}/api/productCategories`)
-        // eslint-disable-next-line no-return-assign
-        .then((response) => this.categoriesData = response.data);
+    async loadCategories() {
+      const response = await axios({
+        method: 'GET',
+        url: `${API_BASE_URL}/api/productCategories`,
+      });
+      this.categoriesData = response.data;
     },
-    loadColors() {
-      axios.get(`${API_BASE_URL}/api/colors`)
-        // eslint-disable-next-line no-return-assign
-        .then((response) => this.colorsData = response.data);
+    async loadColors() {
+      const response = await axios({
+        method: 'GET',
+        url: `${API_BASE_URL}/api/colors`,
+      });
+      this.colorsData = response.data;
     },
     async loadMaterials() {
       const response = await axios(`${API_BASE_URL}/api/materials`, {
